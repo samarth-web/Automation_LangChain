@@ -5,19 +5,19 @@ from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 @tool("add_numbers")
-def add_numbers(numbers: List[float]) -> float:
+def add_numbers(numbers) :
     """Sum numbers. Use when the user asks to add/sum values."""
     return float(sum(numbers))
 
 @tool("sub_numbers")
-def sub_numbers(numbers: List[float]) -> float:
+def sub_numbers(numbers) :
     """Subtract numbers. Use when the user asks to subtract values."""
     val = 0
     for i in numbers:
         val = val - i
     return float(val)
 @tool("multiply_numbers")
-def multi_numbers(numbers: List[float]) -> float:
+def multi_numbers(numbers) :
     """Multiply numbers. Use when the user asks to multiply values."""
     val = 1
     for i in numbers:
@@ -25,7 +25,7 @@ def multi_numbers(numbers: List[float]) -> float:
     return float(val)
 
 @tool("divide_numbers")
-def divide_numbers(numbers: List[float]) -> float:
+def divide_numbers(numbers) :
     """Divide numbers. Use when the user asks to divide values."""
     val = 1
     for i in numbers:
@@ -33,7 +33,7 @@ def divide_numbers(numbers: List[float]) -> float:
     return float(val)
 
 @tool("count_words")
-def count_words(text: str) -> int:
+def count_words(text):
     """Count whitespace-separated words in text."""
     return len(text.split())
 
